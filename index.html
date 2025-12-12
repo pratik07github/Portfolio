@@ -2,9 +2,1336 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title here 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik Sonawale | Visionary Data Scientist & ML Engineer</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #7c3aed;
+            --accent-color: #06b6d4;
+            --dark-color: #0f172a;
+            --light-color: #f8fafc;
+            --glass-color: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --neon-blue: #00d4ff;
+            --neon-purple: #9d4edd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b1120;
+            background-image:
+                radial-gradient(at 40% 20%, rgba(29, 78, 216, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(124, 58, 237, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(6, 182, 212, 0.1) 0px, transparent 50%);
+            color: var(--light-color);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Elements */
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(40px);
+        }
+
+        .bg-element-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--primary-color), transparent);
+            top: 10%;
+            left: 5%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-element-2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--secondary-color), transparent);
+            bottom: 20%;
+            right: 10%;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        .bg-element-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--accent-color), transparent);
+            top: 60%;
+            left: 20%;
+            animation: float 25s ease-in-out infinite;
+        }
+
+        /* Data Visualization Animation */
+        .data-node {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--neon-blue);
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .data-node:nth-child(odd) {
+            background: var(--neon-purple);
+        }
+
+        /* Floating Icons Animation */
+        .floating-icon {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Glassmorphism effects */
+        .glass-card {
+            background: var(--glass-color);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            33% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            66% {
+                transform: translateY(10px) translateX(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(37, 99, 235, 0.8);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .glow-animation {
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            bottom: -10px;
+            left: 15%;
+            border-radius: 2px;
+        }
+
+        /* Custom button styling */
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-primary-custom:hover::before {
+            left: 0;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+            color: white;
+        }
+
+        /* Skill badge styling */
+        .skill-badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.15);
+            color: #60a5fa;
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin: 5px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background: rgba(37, 99, 235, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Profile image styling - CIRCULAR DESIGN */
+        .profile-section {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-img-container {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid transparent;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            background-size: 300% 300%;
+            animation: gradientShift 8s ease infinite;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            padding: 5px;
+            background: #0b1120;
+        }
+
+        .profile-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            top: 0;
+            left: 0;
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Profile Info Cards */
+        .profile-info-card {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px;
+            width: 200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-card-1 {
+            top: 10%;
+            right: -10%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .info-card-2 {
+            bottom: 20%;
+            left: -10%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        /* Typing Animation */
+        .typing-text {
+            display: inline-block;
+            overflow: hidden;
+            border-right: 3px solid var(--primary-color);
+            white-space: nowrap;
+            margin: 0;
+            letter-spacing: 1px;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary-color); }
+        }
+
+        /* Hero Content Styling */
+        .hero-content {
+            padding-right: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #fff 30%, var(--primary-color) 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            color: #94a3b8;
+        }
+
+        /* Quick Stats */
+        .quick-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background: rgba(11, 17, 32, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        /* Project Links Styling */
+        .project-link {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--neon-purple);
+            text-decoration: underline;
+        }
+
+        /* Contact Form Styling */
+        .form-control-custom {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control-custom:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .profile-img-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .info-card-1, .info-card-2 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .quick-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Certification badge */
+        .cert-badge {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.15);
+            color: #22d3ee;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin: 3px;
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+
+        /* Contact info card */
+        .contact-info-card {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: rgba(37, 99, 235, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+    </style>
 </head>
 <body>
-<h1>MY Project </h1>
+    <!-- Animated Background Elements -->
+    <div class="bg-element bg-element-1"></div>
+    <div class="bg-element bg-element-2"></div>
+    <div class="bg-element bg-element-3"></div>
+
+    <!-- Data Visualization Nodes -->
+    <div id="dataNodes"></div>
+
+    <!-- Floating Icons -->
+    <div id="floatingIcons"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Pratik Sonawale</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon text-white"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white mx-2" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white mx-2" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white mx-2" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white mx-2" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white mx-2" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white mx-2" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-primary-custom" href="#contact">Get In Touch</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-vh-100 d-flex align-items-center pt-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <!-- Left Content -->
+                <div class="col-lg-6 order-lg-1 order-2 mt-5 mt-lg-0">
+                    <div class="hero-content">
+                        <h4 class="text-accent mb-3 animate__animated animate__fadeInUp">Hello, I'm</h4>
+                        <h1 class="hero-title animate__animated animate__fadeInUp">Pratik <span class="text-gradient">Sonawale</span></h1>
+                        <h2 class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                            <span class="typing-text">Results-Driven Data Scientist & ML Engineer</span>
+                        </h2>
+                        <p class="hero-description animate__animated animate__fadeInUp animate__delay-2s">
+                            <span class="fw-bold">Innovative</span> Data Scientist with 1.8+ years of expertise in building <span class="fw-bold" style="color: var(--neon-blue);">scalable machine learning pipelines</span>, <span class="fw-bold" style="color: var(--neon-purple);">generative AI applications</span>, and <span class="fw-bold">production-ready data solutions</span>. Passionate about transforming raw data into actionable intelligence that drives measurable business impact.
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-3 mb-4 animate__animated animate__fadeInUp animate__delay-3s">
+                            <a href="#projects" class="btn btn-primary-custom">View My Projects</a>
+                            <a href="#contact" class="btn glass-card-light text-white">Contact Me</a>
+                            <a href="Pratik_Sonawale_Data_Scientist.pdf" class="btn glass-card-light text-white" download><i class="fas fa-download me-2"></i>Download Resume</a>
+                        </div>
+
+                        <div class="quick-stats animate__animated animate__fadeInUp animate__delay-4s">
+                            <div class="stat-item">
+                                <div class="stat-number">1.8+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">15+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Client Satisfaction</div>
+                            </div>
+                        </div>
+
+                        <div class="social-links mt-4 animate__animated animate__fadeInUp animate__delay-5s">
+                            <a href="https://linkedin.com/in/pratik-sonawale-4309b2188" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/pratik07github" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="mailto:pratiksonawale07@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+919823423859" class="social-link"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Profile Image -->
+                <div class="col-lg-6 order-lg-2 order-1 text-center">
+                    <div class="profile-section">
+                        <div class="profile-img-container float-animation">
+                            <div class="profile-decoration"></div>
+                            <img src="Profile_Cover.jpg" alt="Pratik Sonawale" class="profile-img" id="profileImage">
+                        </div>
+
+                        <!-- Floating Info Cards -->
+                        <div class="profile-info-card info-card-1 glass-card">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background: rgba(37, 99, 235, 0.2);">
+                                    <i class="fas fa-code text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Expert In</h6>
+                                    <p class="mb-0" style="color: #cbd5e1; font-size: 0.85rem;">Python, ML, AI</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-card info-card-2 glass-card">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background: rgba(124, 58, 237, 0.2);">
+                                    <i class="fas fa-rocket text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Specialization</h6>
+                                    <p class="mb-0" style="color: #cbd5e1; font-size: 0.85rem;">Generative AI</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title display-5 fw-bold animate__animated animate__fadeInUp">About Me</h2>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="glass-card p-5 h-100 animate__animated animate__fadeInLeft">
+                        <h3 class="h2 mb-4"><span class="text-gradient">Visionary</span> Data Scientist with Analytical Excellence</h3>
+                        <p class="mb-4" style="color: #cbd5e1;">
+                            I am a <span class="fw-bold" style="color: var(--neon-blue);">dynamic and results-driven Data Scientist / ML Engineer</span> specializing in <span class="fw-bold">cutting-edge machine learning</span>, <span class="fw-bold">generative AI</span>, and <span class="fw-bold">geospatial analytics (GIS)</span>. With 1.8 years of hands-on experience, I excel at building <span class="fw-bold">end-to-end ML/DL pipelines</span>, <span class="fw-bold">ETL workflows</span>, and <span class="fw-bold">web-based AI applications</span> that deliver tangible business value.
+                        </p>
+                        <p class="mb-4" style="color: #cbd5e1;">
+                            My expertise spans <span class="fw-bold" style="color: var(--neon-purple);">Generative AI (LLMs, prompt engineering)</span>, <span class="fw-bold">computer vision</span>, and <span class="fw-bold">model deployment</span> using Flask with basic MLOps/CI-CD practices. I am passionate about converting complex data into <span class="fw-bold">scalable, production-ready solutions</span> that solve real-world challenges.
+                        </p>
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3 pulse-animation" style="width: 40px; height: 40px; background: rgba(37, 99, 235, 0.2);">
+                                        <i class="fas fa-map-marker-alt text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Location</h6>
+                                        <p class="mb-0" style="color: #cbd5e1; font-size: 0.9rem;">Karvenagar, Pune</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3 pulse-animation" style="width: 40px; height: 40px; background: rgba(124, 58, 237, 0.2);">
+                                        <i class="fas fa-phone text-secondary"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Phone</h6>
+                                        <p class="mb-0" style="color: #cbd5e1; font-size: 0.9rem;">9823423859</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-primary-custom me-3">Let's Collaborate</a>
+                            <a href="#projects" class="btn glass-card-light text-white">Explore Projects</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="glass-card p-4 h-100 text-center animate__animated animate__fadeInUp">
+                                <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 glow-animation" style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.2);">
+                                    <i class="fas fa-graduation-cap fs-3 text-primary"></i>
+                                </div>
+                                <h4 class="h5 mb-3">Education</h4>
+                                <p class="mb-2" style="color: #cbd5e1; font-size: 0.95rem;"><strong>Shivaji University</strong></p>
+                                <p style="color: #cbd5e1; font-size: 0.9rem;">Bachelors of Computer Application</p>
+                                <p style="color: #94a3b8; font-size: 0.85rem;">GPA: 9.5 | 2019-2022</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="glass-card p-4 h-100 text-center animate__animated animate__fadeInUp animate__delay-1s">
+                                <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 glow-animation" style="width: 70px; height: 70px; background: rgba(124, 58, 237, 0.2);">
+                                    <i class="fas fa-briefcase fs-3 text-secondary"></i>
+                                </div>
+                                <h4 class="h5 mb-3">Experience</h4>
+                                <p class="mb-2" style="color: #cbd5e1; font-size: 0.95rem;"><strong>1.8+ Years</strong></p>
+                                <p style="color: #cbd5e1; font-size: 0.9rem;">Data Scientist / ML Engineer</p>
+                                <p style="color: #94a3b8; font-size: 0.85rem;">Cognizant Technology Solutions</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="glass-card p-4 h-100 text-center animate__animated animate__fadeInUp animate__delay-2s">
+                                <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 glow-animation" style="width: 70px; height: 70px; background: rgba(6, 182, 212, 0.2);">
+                                    <i class="fas fa-robot fs-3 text-accent"></i>
+                                </div>
+                                <h4 class="h5 mb-3">Specialization</h4>
+                                <p style="color: #cbd5e1; font-size: 0.95rem;">Generative AI, LLMs, Computer Vision, ML Deployment</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="glass-card p-4 h-100 text-center animate__animated animate__fadeInUp animate__delay-3s">
+                                <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 glow-animation" style="width: 70px; height: 70px; background: rgba(59, 130, 246, 0.2);">
+                                    <i class="fas fa-cogs fs-3" style="color: #60a5fa;"></i>
+                                </div>
+                                <h4 class="h5 mb-3">Technologies</h4>
+                                <p style="color: #cbd5e1; font-size: 0.95rem;">Python, Flask, SQL, PyTorch, TensorFlow, Scikit-Learn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title display-5 fw-bold animate__animated animate__fadeInUp">Professional Experience</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="glass-card p-5 animate__animated animate__fadeInUp">
+                        <div class="timeline-item">
+                            <h3 class="h4 mb-1">PE-Fintech, Cognizant Technology Solutions</h3>
+                            <p class="text-accent mb-3">Nov 2023 – July 2025 | Data Scientist / ML Engineer</p>
+                            <ul style="color: #cbd5e1;">
+                                <li class="mb-2">Worked on <span class="fw-bold">data-driven projects</span> involving large-scale datasets, responsible for data collection, ETL, data cleaning, and preprocessing for analytical and reporting use.</li>
+                                <li class="mb-2">Performed <span class="fw-bold">Exploratory Data Analysis (EDA)</span>, statistical analysis, and dashboard reporting using Excel, SQL, and Python to support strategic decision-making.</li>
+                                <li class="mb-2">Developed <span class="fw-bold">Python scripts</span> and <span class="fw-bold">SQL queries</span> to automate manual tasks, implement data quality checks, and improve operational efficiency by 30%.</li>
+                                <li class="mb-2">Contributed to <span class="fw-bold">basic CI/CD-style workflows</span> by ensuring reproducible scripts, version-controlled analytics code (Git), and structured reporting processes.</li>
+                                <li>Applied <span class="fw-bold">machine learning techniques</span> to financial data analysis, delivering <span class="fw-bold">insightful predictive models</span> that enhanced business intelligence capabilities.</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h3 class="h4 mb-1">Shivaji University</h3>
+                            <p class="text-accent mb-3">June 2019 – June 2022 | Bachelor of Computer Application</p>
+                            <ul style="color: #cbd5e1;">
+                                <li class="mb-2"><span class="fw-bold">GPA: 9.5</span> - Distinguished academic performance in computer science and data analytics.</li>
+                                <li class="mb-2">Key Subjects Studied: <span class="fw-bold">Software Development Life Cycle (SDLC)</span>, <span class="fw-bold">Project Management</span>, <span class="fw-bold">Descriptive and Inferential Statistics</span>, <span class="fw-bold">Hypothesis Testing</span>, Networking Fundamentals, Data Transmission.</li>
+                                <li>Developed foundational expertise in <span class="fw-bold">statistical analysis</span> and <span class="fw-bold">data-driven decision making</span> through rigorous academic training.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title display-5 fw-bold animate__animated animate__fadeInUp">Featured Projects</h2>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card h-100 p-4 project-card animate__animated animate__fadeInUp">
+                        <div class="position-relative overflow-hidden rounded mb-4" style="height: 200px;">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gemini RealEstate Assistant" class="w-100 h-100 object-fit-cover">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-primary">GenAI</span>
+                                <span class="badge bg-secondary">Flask</span>
+                            </div>
+                        </div>
+                        <h3 class="h4 mb-3">Gemini RealEstate Assistant</h3>
+                        <p style="color: #cbd5e1; font-size: 0.95rem;">Built an <span class="fw-bold">end-to-end AI Real Estate Advisor web application</span> using Python, Flask, and Google's Gemini 2.5 Flash model. Implemented <span class="fw-bold">prompt engineering</span> and <span class="fw-bold">LLM-driven recommendation logic</span> to generate property insights, market trends, risk evaluation, and investment suggestions.</p>
+                        <div class="mt-3">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Flask</span>
+                            <span class="skill-badge">Gemini AI</span>
+                            <span class="skill-badge">LLM</span>
+                            <span class="skill-badge">Prompt Engineering</span>
+                        </div>
+                        <div class="mt-4 d-flex justify-content-between">
+                            <!-- YOUR ACTUAL PROJECT LINKS -->
+                            <a href="https://github.com/pratik07github/Gemini_Realestate_Assistant" class="btn btn-sm btn-primary-custom" target="_blank">Source Code</a>
+                            <a href="https://pratikproject02.pythonanywhere.com/" class="btn btn-sm glass-card-light text-white" target="_blank">Live Demo</a>
+                        </div>
+                        <div class="mt-3">
+                            <small style="color: #94a3b8;">Click to view source code on GitHub or try the live demo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card h-100 p-4 project-card animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="position-relative overflow-hidden rounded mb-4" style="height: 200px;">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Crop Recommendation" class="w-100 h-100 object-fit-cover">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-primary">ML</span>
+                                <span class="badge bg-accent">Flask</span>
+                            </div>
+                        </div>
+                        <h3 class="h4 mb-3">Crop Recommendation System</h3>
+                        <p style="color: #cbd5e1; font-size: 0.95rem;">Built an <span class="fw-bold">ML-powered web application</span> that predicts the most suitable crop using soil nutrients (N, P, K), temperature, humidity, pH, and rainfall. Trained a <span class="fw-bold">Random Forest model</span> with hyperparameter tuning and deployed using Flask. Integrated PyTorch and TensorFlow workflows for neural-based recommendation enhancement.</p>
+                        <div class="mt-3">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Random Forest</span>
+                            <span class="skill-badge">Flask</span>
+                            <span class="skill-badge">PyTorch</span>
+                            <span class="skill-badge">TensorFlow</span>
+                        </div>
+                        <div class="mt-4 d-flex justify-content-between">
+                            <!-- YOUR ACTUAL PROJECT LINKS -->
+                            <a href="https://github.com/pratik07github/Crop-Predictor" class="btn btn-sm btn-primary-custom" target="_blank">Source Code</a>
+                            <a href="https://pratik07.pythonanywhere.com/" class="btn btn-sm glass-card-light text-white" target="_blank">Live Demo</a>
+                        </div>
+                        <div class="mt-3">
+                            <small style="color: #94a3b8;">Click to view source code on GitHub or try the live demo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card h-100 p-4 project-card animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="position-relative overflow-hidden rounded mb-4" style="height: 200px;">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Stress Score Prediction" class="w-100 h-100 object-fit-cover">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-primary">ML</span>
+                                <span class="badge bg-secondary">Health Tech</span>
+                            </div>
+                        </div>
+                        <h3 class="h4 mb-3">Stress Score Prediction Model</h3>
+                        <p style="color: #cbd5e1; font-size: 0.95rem;">Built a <span class="fw-bold">lifestyle-based ML model</span> that predicts stress levels using behavioral features such as sleep hours, diet score, work hours, screen time, caffeine/alcohol intake, and social activity. Implemented an <span class="fw-bold">end-to-end ML pipeline</span> including data cleaning, model training, evaluation, serialization (pickle), and API deployment.</p>
+                        <div class="mt-3">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Scikit-Learn</span>
+                            <span class="skill-badge">Feature Engineering</span>
+                            <span class="skill-badge">ML Pipeline</span>
+                            <span class="skill-badge">API Deployment</span>
+                        </div>
+                        <div class="mt-4 d-flex justify-content-between">
+                            <!-- YOUR ACTUAL PROJECT LINKS -->
+                            <a href="https://github.com/pratik07github/Stress-Predictor" class="btn btn-sm btn-primary-custom" target="_blank">Source Code</a>
+                            <a href="https://pratik001.pythonanywhere.com/" class="btn btn-sm glass-card-light text-white" target="_blank">Live Demo</a>
+                        </div>
+                        <div class="mt-3">
+                            <small style="color: #94a3b8;">Click to view source code on GitHub or try the live demo</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Certifications Section -->
+    <section id="skills" class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title display-5 fw-bold animate__animated animate__fadeInUp">Skills & Certifications</h2>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="glass-card p-5 h-100 animate__animated animate__fadeInLeft">
+                        <h3 class="h3 mb-4">Technical Expertise</h3>
+
+                        <h5 class="mt-4 mb-3">Programming & Scripting</h5>
+                        <div class="mb-4">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">R</span>
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">Bash/Shell</span>
+                        </div>
+
+                        <h5 class="mt-4 mb-3">Machine Learning & Deep Learning</h5>
+                        <div class="mb-4">
+                            <span class="skill-badge">Supervised Learning</span>
+                            <span class="skill-badge">Unsupervised Learning</span>
+                            <span class="skill-badge">Regression</span>
+                            <span class="skill-badge">Classification</span>
+                            <span class="skill-badge">Clustering</span>
+                            <span class="skill-badge">Predictive Modeling</span>
+                            <span class="skill-badge">Feature Engineering</span>
+                            <span class="skill-badge">Model Evaluation</span>
+                            <span class="skill-badge">Cross-Validation</span>
+                            <span class="skill-badge">Deep Learning</span>
+                            <span class="skill-badge">Neural Networks</span>
+                            <span class="skill-badge">CNN/RNN</span>
+                            <span class="skill-badge">Generative AI</span>
+                            <span class="skill-badge">LLMs</span>
+                            <span class="skill-badge">Prompt Engineering</span>
+                            <span class="skill-badge">Reinforcement Learning</span>
+                        </div>
+
+                        <h5 class="mt-4 mb-3">Frameworks & Libraries</h5>
+                        <div class="mb-4">
+                            <span class="skill-badge">Scikit-Learn</span>
+                            <span class="skill-badge">PyTorch</span>
+                            <span class="skill-badge">TensorFlow</span>
+                            <span class="skill-badge">Keras</span>
+                            <span class="skill-badge">Pandas</span>
+                            <span class="skill-badge">NumPy</span>
+                            <span class="skill-badge">Matplotlib</span>
+                            <span class="skill-badge">Seaborn</span>
+                            <span class="skill-badge">XGBoost</span>
+                            <span class="skill-badge">OpenCV</span>
+                            <span class="skill-badge">SpaCy</span>
+                            <span class="skill-badge">NLTK</span>
+                            <span class="skill-badge">Hugging Face</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="glass-card p-5 h-100 animate__animated animate__fadeInRight">
+                        <h3 class="h3 mb-4">Certifications</h3>
+
+                        <div class="mb-4">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="cert-badge me-3">IBM</div>
+                                <div>
+                                    <h5 class="h6 mb-1">Python for Data Science</h5>
+                                    <p class="mb-0" style="color: #94a3b8; font-size: 0.9rem;">Mastered Python programming for data analysis, visualization, and machine learning applications.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="cert-badge me-3">Great Learning</div>
+                                <div>
+                                    <h5 class="h6 mb-1">Time Series Analysis Stock Market Prediction Python</h5>
+                                    <p class="mb-0" style="color: #94a3b8; font-size: 0.9rem;">Advanced time series forecasting techniques applied to financial market prediction.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="cert-badge me-3">IBM</div>
+                                <div>
+                                    <h5 class="h6 mb-1">SQL and Relational Databases</h5>
+                                    <p class="mb-0" style="color: #94a3b8; font-size: 0.9rem;">Expertise in database management, query optimization, and relational data modeling.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-start">
+                                <div class="cert-badge me-3">IBM</div>
+                                <div>
+                                    <h5 class="h6 mb-1">Fine-Tuning Large Language Models with DPO and Hugging Face</h5>
+                                    <p class="mb-0" style="color: #94a3b8; font-size: 0.9rem;">Cutting-edge techniques for fine-tuning and optimizing LLMs for specific applications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="h3 mt-5 mb-4">Additional Competencies</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="h6 mb-3">Data Engineering & MLOps</h5>
+                                <ul class="list-unstyled" style="color: #cbd5e1; font-size: 0.9rem;">
+                                    <li class="mb-2">• Data Cleaning & Wrangling</li>
+                                    <li class="mb-2">• ETL Pipelines (Python + SQL)</li>
+                                    <li class="mb-2">• Model Deployment (Flask/FastAPI)</li>
+                                    <li class="mb-2">• CI/CD Concepts (Git, GitHub)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="h6 mb-3">Business & Soft Skills</h5>
+                                <ul class="list-unstyled" style="color: #cbd5e1; font-size: 0.9rem;">
+                                    <li class="mb-2">• Cross-Functional Collaboration</li>
+                                    <li class="mb-2">• Requirement Gathering</li>
+                                    <li class="mb-2">• Problem Solving</li>
+                                    <li class="mb-2">• Stakeholder Communication</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title display-5 fw-bold animate__animated animate__fadeInUp">Get In Touch</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="glass-card p-4 h-100 animate__animated animate__fadeInLeft">
+                        <h3 class="h3 mb-4">Contact Information</h3>
+
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="h6 mb-1">Location</h5>
+                                <p class="mb-0" style="color: #cbd5e1;">Karvenagar, Pune, India</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="h6 mb-1">Phone</h5>
+                                <p class="mb-0" style="color: #cbd5e1;">+91 9823423859</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 class="h6 mb-1">Email</h5>
+                                <p class="mb-0" style="color: #cbd5e1;">pratiksonawale07@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <h5 class="h6 mb-3">Connect With Me</h5>
+                            <div class="d-flex gap-3">
+                                <a href="https://linkedin.com/in/pratik-sonawale-4309b2188" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/pratik07github" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="mailto:pratiksonawale07@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                                <a href="tel:+919823423859" class="social-link"><i class="fas fa-phone"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="glass-card p-5 h-100 animate__animated animate__fadeInRight">
+                        <h3 class="h3 mb-4">Let's Build Something <span class="text-gradient">Innovative</span> Together</h3>
+                        <p class="mb-4" style="color: #cbd5e1;">
+                            I'm always open to discussing <span class="fw-bold">data science opportunities</span>, <span class="fw-bold">collaborative projects</span>, or <span class="fw-bold">innovative ideas</span>. Whether you need a cutting-edge AI solution, want to explore data-driven insights, or just want to connect, feel free to reach out.
+                        </p>
+
+                        <!-- REAL WORKING CONTACT FORM -->
+                        <form id="contactForm" action="https://formspree.io/f/xblnqlvq" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <input type="text" class="form-control form-control-custom" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <input type="email" class="form-control form-control-custom" name="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <input type="text" class="form-control form-control-custom" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-4">
+                                <textarea class="form-control form-control-custom" name="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary-custom">Send Message</button>
+                            </div>
+                            <div class="mt-3" style="color: #94a3b8; font-size: 0.85rem;">
+                                <i class="fas fa-info-circle me-2"></i>Messages will be sent directly to my email inbox
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h3 class="h4 fw-bold text-white">Pratik Sonawale</h3>
+                    <p class="mb-0" style="color: #94a3b8;">Data Scientist & ML Engineer specializing in innovative, scalable AI solutions.</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <p class="mb-0" style="color: #94a3b8;">© 2025 Pratik Sonawale. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Contact form submission - Using Formspree for actual email functionality
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Show success message
+                    alert('Thank you for your message! I will get back to you soon.');
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Fallback: Open default mail client
+                const name = form.querySelector('input[name="name"]').value;
+                const email = form.querySelector('input[name="email"]').value;
+                const subject = form.querySelector('input[name="subject"]').value;
+                const message = form.querySelector('textarea[name="message"]').value;
+
+                const mailtoLink = `mailto:pratiksonawale07@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`)}`;
+                window.location.href = mailtoLink;
+
+                alert('Opening your email client... Please send the pre-filled email to contact me.');
+            } finally {
+                // Reset button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Profile image placeholder - replace with your actual image
+        document.getElementById('profileImage').addEventListener('error', function() {
+            // If the local image doesn't load, use a placeholder
+            this.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80';
+        });
+
+        // Try to load the local profile image
+        document.getElementById('profileImage').src = 'Profile_Cover.jpg';
+
+        // Create data visualization nodes
+        const dataNodesContainer = document.getElementById('dataNodes');
+        for (let i = 0; i < 20; i++) {
+            const node = document.createElement('div');
+            node.className = 'data-node';
+            node.style.left = `${Math.random() * 100}%`;
+            node.style.top = `${Math.random() * 100}%`;
+            node.style.animation = `float ${10 + Math.random() * 20}s ease-in-out infinite`;
+            node.style.animationDelay = `${Math.random() * 5}s`;
+            dataNodesContainer.appendChild(node);
+        }
+
+        // Create floating icons
+        const floatingIconsContainer = document.getElementById('floatingIcons');
+        const icons = ['fa-python', 'fa-database', 'fa-robot', 'fa-brain', 'fa-chart-line', 'fa-code', 'fa-cloud', 'fa-network-wired'];
+
+        for (let i = 0; i < 15; i++) {
+            const icon = document.createElement('div');
+            icon.className = 'floating-icon';
+            icon.innerHTML = `<i class="fas ${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
+            icon.style.left = `${Math.random() * 100}%`;
+            icon.style.top = `${Math.random() * 100}%`;
+            icon.style.fontSize = `${0.8 + Math.random() * 1.5}rem`;
+            icon.style.animation = `float ${15 + Math.random() * 25}s ease-in-out infinite`;
+            icon.style.animationDelay = `${Math.random() * 10}s`;
+            floatingIconsContainer.appendChild(icon);
+        }
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Typing animation effect
+        const typingText = document.querySelector('.typing-text');
+        const text = typingText.textContent;
+        typingText.textContent = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                typingText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            } else {
+                // Blinking cursor effect
+                setInterval(() => {
+                    typingText.style.borderRightColor = typingText.style.borderRightColor === 'transparent' ? 'var(--primary-color)' : 'transparent';
+                }, 500);
+            }
+        }
+
+        // Start typing animation after page loads
+        window.addEventListener('load', () => {
+            setTimeout(typeWriter, 1000);
+        });
+
+        // Resume Download Notice
+        document.querySelector('a[href="Pratik_Sonawale_Data_Scientist.pdf"]').addEventListener('click', function(e) {
+            // If the PDF doesn't exist locally, show a message
+            setTimeout(() => {
+                if (!this.hasAttribute('downloaded')) {
+                    alert('To make the resume download work:\n1. Save your resume as "Pratik_Sonawale_Data_Scientist.pdf"\n2. Place it in the same folder as this HTML file\n\nFor now, you can view the resume by opening the PDF file separately.');
+                }
+            }, 100);
+        });
+    </script>
 </body>
 </html>
